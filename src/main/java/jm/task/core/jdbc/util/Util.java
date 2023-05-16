@@ -2,7 +2,9 @@ package jm.task.core.jdbc.util;
 
 import com.sun.xml.bind.v2.runtime.Coordinator;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class Util {
     // реализуйте настройку соеденения с БД

@@ -8,35 +8,36 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    UserDao userDao = new UserDaoJDBCImpl();
+    private final UserDao userDao = new UserDaoJDBCImpl();
 
+    @Override
     public void createUsersTable() {
         userDao.createUsersTable();
-        System.out.println("Table is add");
     }
 
+    @Override
     public void dropUsersTable() {
         userDao.dropUsersTable();
-        System.out.println("Table is drop");
     }
 
+    @Override
     public void saveUser(String name, String lastName, byte age) {
         userDao.saveUser(name, lastName, age);
-        System.out.println("User is add");
+        System.out.println("User с именем – " + name + " добавлен в базу данных");
     }
 
+    @Override
     public void removeUserById(long id) {
         userDao.removeUserById(id);
-        System.out.println("User is remove by ID");
     }
 
+    @Override
     public List<User> getAllUsers() {
         return userDao.getAllUsers();
-
     }
 
+    @Override
     public void cleanUsersTable() {
         userDao.cleanUsersTable();
-        System.out.println("Table is clean");
     }
 }
